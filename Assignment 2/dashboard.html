@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dashboard</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="style.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+<script type = "text/javascript" src = "https://www.gstatic.com/charts/loader.js">
+</script>
+<script type = "text/javascript">
+   google.charts.load('current', {packages: ['corechart','line']});  
+</script>
+</head>
+<body>
+    <div class="topNavbar">
+      <nav class="navbar navbar-expand-md navbar-light bg-white">
+        <span style="color:purple;font-weight:bold;font-size:50px;margin-left: 40px;margin-top: -2px;">G</span>
+        <div class="container-sm-block" style="margin-top: 6spx;" onclick="myFunction(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+        
+        <div class="collapse navbar-collapse justify-content-between .ml-3" id="navbarCollapse">
+            <div class="navbar-nav">
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" style="padding-right:30px;" data-toggle="dropdown">Mega Manu</a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">Anything1</a>
+                        <a href="#" class="dropdown-item">Anything2</a>
+                        <a href="#" class="dropdown-item">Anything3</a>
+                    </div>
+                </div>
+            </div>
+        <form class="form-inline">
+            <div class="input-group">                    
+              <input type="text"  placeholder="Search "> 
+              <button type="button" ><i class="fa fa-search"></i></button>
+            </div>
+        </form>
+           <div class="navbar-nav ">
+              <i class="fa fa-search" style="font-size: 20px;margin-top: 36px;"></i>
+              <i class="fa fa-arrows" style="font-size: 20px;margin-top: 36px;" aria-hidden="true"></i>
+              <i class="fa fa-user-circle" style="font-size: 40px;"></i>
+            </div>
+      </nav>
+    </div>
+  </div>
+    <div class="wrapper d-flex warpper-expand-md align-items-stretch" style="max-height:fit-content;">
+      <nav id="sidebar" class="active">        
+        <ul class="list-unstyled components mb-5">
+          <li class="active">
+            <a href="dashboard.html"><span class="fa fa-dashboard" style="font-size: 40px;"></span> Dashboard</a>
+          </li>
+          <li>
+              <a href="users.html"><span class="fa fa-user" style="font-size: 40px;"></span> User</a>
+          </li>
+          <li>
+            <a href="#"><span class="fa fa-dashboard" style="font-size: 40px;"></span> Manage Questionaire Template</a>
+          </li>
+          <li>
+            <a href="#"><span class="fa fa-user" style="font-size: 50px;"></span> Patient</a>
+          </li>
+        </ul>
+     </nav>
+    <div class="container-fluid">
+      <div  style="height: 44px;font-size: 26px;margin: 27px; border-width: 1px;border-color:whitesmoke;border-style: groove;border-top: none;border-left: none;border-right: none;">
+        <p style="margin-left: 3px;margin-top: -12px;font-weight: 500;">Analytics <i style="font-size: 14px;margin-left: 13px;font-style: normal;font-weight: 500;">Dashboard | Analytics</i></p>
+      </div><br>
+    <div class="container-fluid" id="main">
+      <div class="row" style="width: 100%;">
+        <div class="col" style="width: 100%;">
+    <div style="display:flexbox;margin-top: -15px;">
+      <table>
+        <tr>  
+          <td>
+            <aside class="box1">
+              <p><i class="fa fa-cloud-upload"></i><br>Today's Upload<br><i style="color: purple;font-size: 20px;font-style: normal;">21</i></p>
+            </aside>
+          </td>
+          <td>  
+            <aside class="box1">
+              <p><i class="fa fa-user-plus" ></i><br> New Users<br> <i style="color: purple;font-size: 20px;font-style: normal;">21</i></p>
+            </aside>
+          </td>
+          <td>
+            <aside class="box1">
+              <p><i class="fa fa-usd"></i><br>Total Sales<br> <i style="color: purple;font-size: 20px;font-style: normal;">4021</i></p>
+            </aside>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <aside class="box1 " style="height: 125px;">
+              <i class="fa fa-usd"></i><br> <i style="color: purple;font-size: 20px;font-style: normal;">4021</i>
+            </aside>
+          </td>
+          <td>
+            <aside class="box1 "style="height: 125px;">
+              <i class="fa fa-cog"></i><br> <i style="color: purple;font-size: 20px;font-style: normal;">4021</i>
+            </aside>
+          </td>
+          <td>
+            <aside class="box1 " style="height: 125px;">
+              <i class="fa fa-bell"></i><br> <i style="color: purple;font-size: 20px;font-style: normal;">4021</i>
+            </aside>
+          </td>
+        </tr>
+      </table>
+    </div>
+        </div>
+    <div class="col"id = "container" style="cursor: pointer;width:100% ; box-shadow: 0px 0px 6px 5px rgba(0,0,0,6%);max-width: fit-content;">
+    </div>
+    </div>
+    <div class="row" style="width: 100%;">
+      <div class="col-sm-6" style="display: flex;margin-left: 30px; margin-top: 45px; width: 685px; box-shadow: 0px 0px 6px 5px rgba(0,0,0,6%);">
+        <div class="container-fluid">
+          <p style="margin-top: 10px;font-size: 15px;"><b>Last Month Summary</b></p>
+        <div class="row">
+        <table class="col table" style="margin-left: 18px;">
+          <tr style=" background-color: #dddddd; ">
+            <th>Item</th>
+            <th>Status</th>
+          </tr>
+          <tr>
+            <td>Portable Speaker</td>
+            <td>+$1200</td>
+          </tr>
+          <tr>
+            <td>Portable Headphone</td>
+            <td>In Stock</td>
+          </tr>
+          <tr>
+            <td>Speaker</td>
+            <td>Out of stock</td>
+          </tr>
+          <tr>
+            <td>Watch</td>
+            <td>Low stock</td>
+          </tr>
+        </table>
+        <div class="col-sm-6" id="donutchart" style="width: 360px; height: 160px;display: inline-block;margin-top: 45px;"></div>
+        </div>
+        </div>
+      </div>
+      <div class="col" style="margin-left:30px; margin-top: 45px; width: 685px; box-shadow: 0px 0px 6px 5px rgba(0,0,0,6%);">
+        <div style="display: flex;">
+        <h6>Top Autors</h6><br>
+        </div>
+        <div style="display: flex;margin-top: 35px;margin-left: 20px;">
+          <img src="img3.jpg" id="user">
+          <p style="margin-right: 310px ;"><b>David Hopkins</b><br>Lorem ipsum dolor sit amet consectetur</p>
+          <button type="button" id="foll">Follow</button>
+          
+        </div>
+        <div style="display: flex;margin-top: 35px;margin-left: 20px;">
+          <img src="img4.jpg" id="user">
+          <p style="margin-right: 310px ;"><b>James Mitchell</b><br>Lorem ipsum dolor sit amet consectetur</p>
+          <button type="button" id="foll">Follow</button>
+        </div>
+        <div style="display: flex;margin-top: 35px;margin-left: 20px;">
+          <img src="img5.jpg" id="user">
+          <p style="margin-right: 310px ;"><b>Jassica Mitchell</b><br>Lorem ipsum dolor sit amet consectetur</p>
+          <button type="button" id="foll">Follow</button>
+        </div>
+        
+      </div>
+      </div>
+    </div>
+    </div>
+    <script language = "JavaScript">
+      function drawChart() {
+         // Define the chart to be drawn.
+         var data = new google.visualization.DataTable();
+         data.addColumn('string', 'Month');
+         data.addColumn('number', 'Sales');
+         
+         data.addRows([
+               [,  40],
+               [,  80],
+               [,  20],
+               [,  90],
+               [,  30],
+               [,  80],
+               [,  40],
+            
+         ]);
+            
+         // Set chart options
+         var options = {'title' : 'Sales',
+         'chartArea': {'width': '100%', 'height': '80%'},
+               'legend': {'position': 'bottom'},
+         legend: 'none',
+       colors: ['black'],
+         vAxis: { textPosition: 'none' },
+         curveType: 'function',
+            'height':350,
+            'width':690,
+            
+            pointsVisible: true	  
+         };
+
+         // Instantiate and draw the chart.
+         var chart = new google.visualization.LineChart(document.getElementById('container'));
+         chart.draw(data, options);
+      }
+      google.charts.setOnLoadCallback(drawChart);
+   </script>  
+   <script type="text/javascript">
+    google.charts.load("current", {packages:["corechart"]});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ['Task', 'Hours per Day'],
+        ['Completed',     11],
+        ['Pending',      2],
+      ]);
+
+      var options = {
+        chartArea: {'width': '100%', 'height': '80%'},
+        legend:'bottom',
+        pieHole: 0.8,
+        colors:['black','gray'],
+        vAxis: { textPosition: 'none' },
+        pieSliceText:'none',
+        pointsVisible: false
+        
+      };
+
+      var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+      chart.draw(data, options);
+    }
+  </script> 
+<script>
+  function myFunction(x) {
+    x.classList.toggle("change");
+  }
+  </script>
+</body>
+</html>

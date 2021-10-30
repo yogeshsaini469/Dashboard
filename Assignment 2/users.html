@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <title>User</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    </head>
+    <style>
+        table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  box-shadow: 0px 0px 6px 5px rgba(0,0,0,6%);
+}
+
+td, th {
+  font-size: 14px;
+  border: 1px solid lightgray;
+  border-left: none;
+  border-right: none;
+  text-align:left;
+  padding: 15px 40px;
+}
+#dot {
+    width: 4px;
+    height: 4px;
+    background-color: black;
+    margin: 1px 0;
+    margin-left: 17px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 35px;
+  height: 10px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: lightgray;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 0px;
+    bottom: -4px;
+    background-color: black;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: gray;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px gray;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(17px);
+  -ms-transform: translateX(17px);
+  transform: translateX(17px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+    </style>
+    <body>
+        <div class="topNavbar">
+            <nav class="navbar navbar-expand-md navbar-light bg-white">
+              <span style="color:purple;font-weight:bold;font-size:50px;margin-left: 40px;margin-top: -2px;">G</span>
+              <div class="container-sm-block" style="margin-top: 6spx;" onclick="myFunction(this)">
+                  <div class="bar1"></div>
+                  <div class="bar2"></div>
+                  <div class="bar3"></div>
+              </div>
+              
+              <div class="collapse navbar-collapse justify-content-between .ml-3" id="navbarCollapse">
+                  <div class="navbar-nav">
+                      <div class="nav-item dropdown">
+                          <a href="#" class="nav-link dropdown-toggle" style="padding-right:30px;" data-toggle="dropdown">Mega Manu</a>
+                          <div class="dropdown-menu">
+                              <a href="#" class="dropdown-item">Anything1</a>
+                              <a href="#" class="dropdown-item">Anything2</a>
+                              <a href="#" class="dropdown-item">Anything3</a>
+                          </div>
+                      </div>
+                  </div>
+              <form class="form-inline">
+                  <div class="input-group">                    
+                    <input type="text"  placeholder="Search "> 
+                    <button type="button" ><i class="fa fa-search"></i></button>
+                  </div>
+              </form>
+                 <div class="navbar-nav ">
+                    <i class="fa fa-search" style="font-size: 20px;margin-top: 36px;"></i>
+                    <i class="fa fa-arrows" style="font-size: 20px;margin-top: 36px;" aria-hidden="true"></i>
+                    <i class="fa fa-user-circle" style="font-size: 40px;"></i>
+                  </div>
+            </nav>
+          </div>
+        </div>
+          <div class="wrapper d-flex warpper-expand-md align-items-stretch" style="max-height:fit-content;">
+            <nav id="sidebar" class="active">        
+              <ul class="list-unstyled components mb-5">
+                <li class="active">
+                  <a href="dashboard.html"><span class="fa fa-dashboard" style="font-size: 40px;"></span> Dashboard</a>
+                </li>
+                <li>
+                    <a href="users.html"><span class="fa fa-user" style="font-size: 40px;"></span> User</a>
+                </li>
+                <li>
+                  <a href="#"><span class="fa fa-dashboard" style="font-size: 40px;"></span> Manage Questionaire Template</a>
+                </li>
+                <li>
+                  <a href="#"><span class="fa fa-user" style="font-size: 50px;"></span> Patient</a>
+                </li>
+              </ul>
+           </nav>
+           <div class="container-fluid">
+            <div  style="height: 44px;font-size: 26px;margin: 27px; border-width: 1px;border-color:whitesmoke;border-style: groove;border-top: none;border-left: none;border-right: none;">
+              <p style="margin-left: 3px;margin-top: -12px;font-weight: 500;">User List <i style="font-size: 14px;margin-left: 13px;font-style: normal;font-weight: 500;">Dashboard | User</i></p>
+            </div><br>
+            <div class="container-fluid">
+                <table>
+                    <tr>
+                      <th style="font-size: 12px; color: gray;">No.</th>
+                      <th style="font-size: 12px; color: gray;">Image</th>
+                      <th style="font-size: 12px; color: gray;">Name</th>
+                      <th style="font-size: 12px; color: gray;">PM Patient Id</th>
+                      <th style="font-size: 12px; color: gray;">Date Of Birth</th>
+                      <th style="font-size: 12px; color: gray;">Social Security Number</th>
+                      <th style="font-size: 12px; color: gray;">Status</th>
+                      <th style="font-size: 12px; color: gray;">Action</th>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td><a href="#"><span class="fa fa-user" style="color: black;font-size: 20px;"></span></a></td>
+                      <td>Manish Saini</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td><label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                      </label></td>
+                      <td><div id="dot"></div>
+                        <div id="dot"></div>
+                        <div id="dot"></div></td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td><a href="#"><span class="fa fa-user" style="color: black;font-size: 20px;"></span></a></td>
+                      <td>Deepak Soni</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td><label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                      </label></td>
+                      <td><div id="dot"></div>
+                        <div id="dot"></div>
+                        <div id="dot"></div></td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td><a href="#"><span class="fa fa-user" style="color: black;font-size: 20px;"></span></a></td>
+                      <td>Deepak Soni Soni</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td><label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                      </label></td>
+                      <td><div id="dot"></div>
+                        <div id="dot"></div>
+                        <div id="dot"></div></td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td><a href="#"><span class="fa fa-user" style="color: black; font-size: 20px;"></span></a></td>
+                      <td>hannahlee friedman</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td><label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                      </label></td>
+                      <td><div id="dot"></div>
+                        <div id="dot"></div>
+                        <div id="dot"></div></td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td><a href="#"><span class="fa fa-user" style="color: black;font-size: 20px;"></span></a></td>
+                      <td>Test Patient080821a</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td><label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                      </label></td>
+                      <td><div id="dot"></div>
+                        <div id="dot"></div>
+                        <div id="dot"></div></td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td><a href="#"><span class="fa fa-user" style="color: black;font-size: 20px;"></span></a></td>
+                      <td>Manish Saini</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td><label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                      </label></td>
+                      <td><div id="dot"></div>
+                        <div id="dot"></div>
+                        <div id="dot"></div></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td><a href="#"><span class="fa fa-user" style="color: black;font-size: 20px;"></span></a></td>
+                        <td>Yogesh Kumar</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><label class="switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                          </label></td>
+                        <td><div id="dot"></div>
+                            <div id="dot"></div>
+                            <div id="dot"></div></td>
+                      </tr>
+                  </table>
+            </div>
+        </body>
+</html>
